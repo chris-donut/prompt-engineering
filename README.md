@@ -22,3 +22,8 @@ python monitor_apy.py https://example.com/kamino 0.05 kamino --interval 60
 
 The script will fetch the page every 60 seconds and notify if the APY value has
 changed from the previous check.
+
+### Installation
+
+`monitor_apy.py` relies only on Python's standard library, so no additional
+packages are required. Ensure you are using Python 3.8 or later.

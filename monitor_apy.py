@@ -1,7 +1,8 @@
 import argparse
-import requests
 import re
 import time
+import urllib.error
+import urllib.request
 from typing import Optional
 
 
@@ -13,18 +14,18 @@ def fetch_apy(url: str) -> Optional[float]:
     adjustment depending on the protocol's API.
     """
     try:
-        resp = requests.get(url, timeout=10)
-        resp.raise_for_status()
-    except Exception as exc:
+        with urllib.request.urlopen(url, timeout=10) as resp:
+            content = resp.read().decode()
+    except urllib.error.URLError as exc:
         print(f"Failed to fetch APY from {url}: {exc}")
         return None
 
     # Look for patterns like '12.34%' or '"apy": 0.1234'
-    percent_match = re.search(r"(\d+\.\d+)%", resp.text)
+    percent_match = re.search(r"(\d+\.\d+)%", content)
     if percent_match:
         return float(percent_match.group(1)) / 100.0
 
-    json_match = re.search(r'"?apy"?\s*[:=]\s*(\d+\.\d+)', resp.text, re.IGNORECASE)
+    json_match = re.search(r'"?apy"?\s*[:=]\s*(\d+\.\d+)', content, re.IGNORECASE)
     if json_match:
         return float(json_match.group(1))
 
