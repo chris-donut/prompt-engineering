@@ -1,24 +1,41 @@
-# prompt-engineering
+# Atompunk Personal Site
 
-This repository contains simple utilities for experimenting with prompt engineering.
+Retro-futurist personal site for a tech entrepreneur, built with Next.js (App Router), Tailwind CSS, and Framer Motion. Pages include Home, Thesis, Investments, Companies, and Art, with reusable section components and design tokens for a blue/orange atompunk palette.
 
-## Monitor APY Changes
+## Getting Started
 
-`monitor_apy.py` is a small script that polls a given URL for APY changes. It
-can be used to watch protocols like Kamino and report whenever the APY value on
-the page changes.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+   > If your environment blocks npm registry access, try setting an explicit registry (e.g., `npm config set registry https://registry.npmjs.org`) or mirror before installing.
 
-### Usage
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+   Then open http://localhost:3000.
 
-```bash
-python monitor_apy.py <url> <base_apy> <protocol> [--interval SECONDS]
-```
+3. Lint and build:
+   ```bash
+   npm run lint
+   npm run build
+   npm run start # serve the production build
+   ```
 
-Example:
+## Project Structure
 
-```bash
-python monitor_apy.py https://example.com/kamino 0.05 kamino --interval 60
-```
+- `app/` – App Router pages and global layout/styles
+- `components/` – UI primitives and page sections
+- `data/` – Seed content for hero, investments, companies, and art
+- `tailwind.config.ts` – Design tokens (colors, fonts, shadows, animations)
 
-The script will fetch the page every 60 seconds and notify if the APY value has
-changed from the previous check.
+## Visual Identity
+
+- Palette: horizon blue/orange with gold and mint accents
+- Typography: DM Sans (display), Inter (body)
+- Effects: soft glows, gradients, and motion via Framer Motion
+
+## Notes
+
+This repository previously contained prompt-engineering utilities; those have been replaced by the site scaffold. Refer to `site_architecture.md` for the original architecture plan.
