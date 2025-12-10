@@ -1,0 +1,38 @@
+{
+  "today_date": "2025-02-05",
+  "sleep_data": {
+    "HRV": 92,
+    "deep_sleep_hours": 1.8,
+    "duration_hours": 7.3
+  },
+  "energy_level": "medium",
+  "mood": "creative",
+  "calendar_events": [
+    "Standup 09:00-09:15",
+    "Investor review 17:00-17:45"
+  ],
+  "linear_tasks": [
+    "Finalize onboarding flow v1",
+    "Write release notes for version lock"
+  ],
+  "slack_unreads": [
+    "p0 bug triage",
+    "random kudos thread"
+  ],
+  "notion_version_goals": [
+    "Version 0.9 onboarding milestone",
+    "Automated alerts for APY monitor"
+  ],
+  "blockers": [
+    "Need design sign-off for onboarding CTA",
+    "Missing metrics dashboard access"
+  ],
+  "yesterday_expansion_log": [
+    "Explored social referral loop",
+    "Noted risk on mobile latency"
+  ],
+  "health_constraints": {
+    "workout": true,
+    "deep_sleep_priority": true
+  }
+}
